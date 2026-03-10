@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<style>
+    .center-table {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<h3 style="color: grey">Your Portfolio</h3><br>
+    <div class="center-table">
+        <table>
+            <thead>
+                <tr>&nbsp&nbsp&nbsp
+                    <th>Stock &nbsp&nbsp&nbsp</th>
+                    <th>Shares &nbsp&nbsp&nbsp</th>
+                    <th>Current Price &nbsp&nbsp&nbsp</th>
+                    <th>Total Value &nbsp&nbsp&nbsp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                    {% if stock["shares"] > 0 %}
+                        <tr>
+                            <td>{{ stock["symbol"] }} &nbsp&nbsp&nbsp</td>
+                            <td>{{ stock["shares"] }} &nbsp&nbsp&nbsp</td>
+                            <td>{{ stock["price"] | usd }} &nbsp&nbsp&nbsp</td>
+                            <td>{{ stock["total_value"] }} &nbsp&nbsp&nbsp</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div><br>
+        <p>Cash Balance: {{ cash_balance }}<br>
+        Total Portfolio Value: {{ total_portfolio_value }}</p>
+{% endblock %}

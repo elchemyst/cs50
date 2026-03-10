@@ -1,0 +1,15 @@
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE UNIQUE INDEX username ON users (username);
+
+
+'id' - to uniquely identify each transaction.
+'user_id' - to link the transaction to a specific user.
+'symbol' - to store the stock symbol of the purchased stock.
+'shares' - to store the number of shares purchased.
+'price' - to store the price per share at the time of the transaction.
+'timestamp' - to store when the transaction occurred.
+Remember, the 'id' could be an auto-incrementing integer,
+and 'user_id' would likely be a foreign key linking to the
+'users' table. The 'symbol' could be a text field, 'shares'
+could be an integer, 'price' could be a real number, and
+'timestamp' could be a datetime field.

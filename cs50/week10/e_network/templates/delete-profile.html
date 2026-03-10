@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Public Profile
+{% endblock %}
+
+{% block main %}
+    <h6>Are you sure you want to delete your profile?</h6>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{{ url_for('feed') }}" class="btn btn-primary btn-sm">No</a>
+        <form action="{{ url_for('delete_profile') }}" method="post" class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Yes</button>
+        </form>
+    </div>
+{% endblock %}

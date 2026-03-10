@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>In the TV show Friends, how many times has Ross been married by the time the series ends?</h3>
+                    <button class="wrong">Two</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="right">Three</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="wrong">Four</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="wrong">Five</button><br>
+                <p id="para_1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of the son of Ross, Carol & Susan?</h3>
+                <form id="myForm">
+                    <input type="text" id="name" name="name" class="changeFont" autocorrect="off" autocomplete="off">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="Check Answer">
+                  </form><br>
+                <p id="para_2"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

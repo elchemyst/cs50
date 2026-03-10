@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="row my-5">
+    <div class="col-6 mx-auto">
+            <img src="./static/img/logo_colour.png" alt="Chornado Logo" class="img-fluid">
+    </div>
+</div>
+<div class="row my-5">
+    <div class="col-8 col-md-6 col-lg-4 mx-auto">
+        <div class="row">
+            <h4 class="text-center">Login or <a href="/register">Register</a></h4>
+        </div>
+       <form action="/login" method="post" class="row">
+            {{ template_form.csrf_token() }}
+            <div class="row my-1">
+                {{ template_form.username(class="form-control", placeholder="Username/Email") }}
+            </div>
+            <div class="row my-1">
+                {{ template_form.password(class="form-control", placeholder="Password") }}
+            </div>
+            <div class="col my-1 text-center">
+                {{ template_form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row my-5 text-center">
+    <div class="col-10 col-md-8 col-lg-6 mx-auto">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Eo80DMoXrf4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

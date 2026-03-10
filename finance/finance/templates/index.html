@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Current Price</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.shares }}</td>
+            <td id="price-{{ row.symbol }}">{{ row.current_price | usd }}</td>
+            <td id="total-{{ row.symbol }}">{{ row.total | usd }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr id="total-footer-row">
+            <td>Cash</td>
+            <td id="cash-value">{{ cash | usd }}</td>
+        </tr>
+        <tr>
+            <td><strong>TOTAL</strong></td>
+            <td id="grand-total-value"><strong>{{ total_portfolio_value | usd }}</strong></td>
+        </tr>
+    </tfoot>
+
+{% endblock %}

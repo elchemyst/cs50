@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Click</title>
+    <style>
+        /* Define the size of the image thumbnail */
+        .thumbnail {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Display the thumbnail image on the webpage -->
+    <img src="IMG_730306059.jpg" alt="Principles_Pic" class="thumbnail" id="image">
+
+    <script>
+        // Get the image element
+        var img = document.getElementById('image');
+
+        // Add a click event listener to the image
+        img.addEventListener('click', function() {
+            // Open the full-size image in a new tab
+            window.open('IMG_730306059.jpg', '_blank');
+        });
+    </script>
+</body>
+</html>

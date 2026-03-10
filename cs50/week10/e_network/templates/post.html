@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post Image
+{% endblock %}
+
+{% block main %}
+    <!-- the enctype is necessary when dealing with file uploads in a form. Without this attribute,
+    the file data won't be sent correctly to your Flask application's request.files object. -Duck -->
+    <h6>Post an image:</h6>
+    <div class="col-sm-3 d-flex justify-content-center mx-auto">
+        <form action="/posts" method="post" enctype="multipart/form-data">
+        <input type="file" id="img_upload" name="img_upload" class="form-control form-control-sm"><br>
+        <input type="text" placeholder="Caption" autocomplete="off" id="caption" name="caption" class="form-control form-control-sm"><br>
+        <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock %}
