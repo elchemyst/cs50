@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <h6>Your profile:</h6>
+    {% if not posts %}
+        <h6>You have not uploaded anything yet.</h6>
+        <a style="text-decoration: none;" href="{{ url_for('posts') }}">Upload an image</a>
+    {% endif %}
+
+    {% for post in posts %}
+        <div>
+            <img src="{{ url_for('static', filename='posts/' + post.image_path) }}" class="img-fluid" style="max-width: 33%; max-height: 33%;" alt="{{ post.caption }}">
+            {% if post.caption %}
+                <h6 style="color: grey;">{{ post.caption }} ({{ post.timestamp }})</h6>
+            {% else %}
+            <h6 style="color: grey;">{{ post.timestamp }}</h6>
+            {% endif %}
+            <form action="/delete" method="post" class="mb-5">
+                <input type="hidden" name="post_id" value="{{ post.id }}">
+                <button type="submit" class="btn btn-danger btn-sm">Delete Post</button>
+            </form>
+        </div>
+    {% endfor %}
+    <div style="margin-top: 16px;">
+        <a href="{{ url_for('delete_profile') }}" class="btn btn-danger btn-sm">Delete Profile</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,101 @@
+/* DISCLAIMER: 90% OF THIS IS WRITTEN WITH THE HELP OF DUCK DEBUGGER & THE IDEA IS TO BUILD UP NEW VOCABULARY WHILE DOING SO */
+
+body {
+    text-align: center;
+
+    font-family: IBM Plex Sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+
+.header {
+    font-family: 'Olive Village', 'San Francisco', 'Helvetica', 'Arial', sans-serif;
+}
+
+#intro {
+    text-align: justify;
+    padding-top: 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+.picture {
+    height: 120px;
+    padding-top: 5px;
+}
+
+.section {
+    text-align: center;
+    padding-right: 6px;
+    margin: 6px;
+    color: #d16f3a;
+    font-family: var(--font-polysans-mono);
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --tw-text-opacity: 1;
+}
+
+.section:hover {
+    color: #d16f3a;
+    text-decoration: underline;
+}
+
+.slash {
+    color: #d16f3a;
+}
+
+.sub_header {
+    padding-top: 58px;
+}
+
+#time-sensitive-greeting {
+    margin-top: 20px;
+    transition: opacity 0.5s ease-in-out;
+    height: 30px;
+    color: #d16f3a;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/*
+-webkit-text-size-adjust: 100%;
+--black-100: #16171b;
+--white: white;
+--red: #ff4d4d;
+--blue-2: #92bee7;
+--purple-100: #866cc7;
+--black-95: #222326;
+--qualified: #3cb652;
+--black-40: #a2a2a4;
+--white-5: rgba(255, 255, 255, .05);
+--white-10: rgba(255, 255, 255, .1);
+--orange: #f29871;
+--black-80: #454549;
+--black-90: #2d2e32;
+--white-2-21: rgba(255, 255, 255, .02);
+--rank-yellow: #edb513;
+--cool-red: #f271a7;
+--white-20: rgba(255, 255, 255, .2);
+--black-50: #8a8b8d;
+--rank-blue: #1f87e7;
+color: var(--white);
+font-family: IBM Plex Sans, sans-serif;
+font-size: 1rem;
+font-weight: 300;
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+box-sizing: border-box;
+*/

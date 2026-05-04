@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: much higher average running time than sort2 & O(n) & Ω(n) vary by a lot
+
+sort2 uses: merge sort
+
+How do you know?: much lower average running time than the other 2 & O(n) & Ω(n) are fairly consistent
+
+sort3 uses: selection sort
+
+How do you know?: much higher average running time than sort2 & O(n) & Ω(n) are fairly consistent

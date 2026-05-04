@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3 style="color: green">{{ info.name }} ({{ info.symbol }})</h1>
+    <h4>Current Price: {{ info.price | usd }}</h4>
+{% endblock %}

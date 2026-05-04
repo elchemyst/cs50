@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<style>
+    .center-table {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<h3 style="color: grey">Transaction History</h3><br>
+    <div class="center-table">
+        <table>
+            <thead>
+                <tr>&nbsp&nbsp&nbsp
+                    <th>Stock &nbsp&nbsp&nbsp</th>
+                    <th>Shares &nbsp&nbsp&nbsp</th>
+                    <th>Transaction Price &nbsp&nbsp&nbsp</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock["symbol"] }} &nbsp&nbsp&nbsp</td>
+                        <td>{{ stock["shares"] }} &nbsp&nbsp&nbsp</td>
+                        <td>{{ stock["price"] | usd }} &nbsp&nbsp&nbsp</td>
+                        <td>{{ stock["timestamp"]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

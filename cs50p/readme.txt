@@ -1,0 +1,1 @@
+Some helper functions might be unavailable for weeks 5 through 8.

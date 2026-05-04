@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Explore
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('filter') }}" method="post">
+        <h6>Find people & filter your feed:</h6>
+    <div class="container-sm">
+        <table class="table mx-auto" style="width: 600px;">
+            <thead class="text-start">
+                <tr>
+                    <th scope="col" style="width: 10%;">Feed</th>
+                    <th scope="col" style="width: 35%;">Name</th>
+                    <th scope="col" style="width: 35%;">Username</th>
+                    <th scope="col" style="width: 20%;">No. of posts</th>
+                </tr>
+            </thead>
+            <tbody class="text-start">
+                {% for user in users %}
+                <tr>
+                    <td style="width: 10%;">
+                        <div class="form-check">
+                            <input class="form-check-input"
+                            type="checkbox"
+                            name="user_ids"
+                            value="{{ user.id }}"
+                            {% if user.id in selected_user_ids %} checked {% endif %}>
+                        </div>
+                    </td>
+                    <td style="width: 35%;">{{ user.name }}</td>
+                    <td style="width: 35%;"><a style="text-decoration: none;" href="{{ url_for('public_profile', user_id=user.id) }}">{{ user.username }}</a></td>
+                    <td style="width: 20%;">{{ user.img_count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <input type="hidden" name="user_count" value="{{ user_count }}">
+            <button type="submit" class="btn btn-primary btn-sm">Filter Feed</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

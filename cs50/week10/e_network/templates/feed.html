@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Feed
+{% endblock %}
+
+{% block main %}
+    <div>
+        {% if filtered_state %}
+            <h6>Filtered Feed:</h6>
+        {% else %}
+            <h6>Global Feed:</h6>
+        {% endif %}
+    </div>
+    {% for post in posts %}
+        <div>
+            <p style="margin-bottom: 4px;">
+                Posted by:
+                <a style="text-decoration: none;"
+                    href="{{ url_for('profile') if post.user_id == session['user_id'] else url_for('public_profile', user_id=post.user_id) }}">
+                    {{ post.username }}
+                </a>
+            </p>
+        </div>
+        <div class="container">
+            <img src="{{ url_for('static', filename='posts/' + post.image_path) }}" class="img-fluid" style="max-width: 33%; max-height: 33%;" alt="{{ post.caption }}">
+            {% if post.caption %}
+                <h6 style="color: grey; margin-top: 4px; margin-bottom: 50px;">{{ post.caption }} ({{ post.timestamp }})</h6>
+            {% else %}
+                <h6 style="color: grey; margin-top: 4px; margin-bottom: 50px;">{{ post.timestamp }}</h6>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    <h6>
+        Note: These images were found on Pinterest and are used here for purely educational purpose.
+        I do not own them. All credit & rights go to the original creators.
+    </h6>
+{% endblock %}

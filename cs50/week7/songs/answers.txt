@@ -1,0 +1,11 @@
+To calculate the aura by averaging energy, valence & danceability of top
+100 songs might not be very accurate because:
+    Suppose that the user only ever listened to 100 songs in that year.
+    Suppose that he listened to song 1 30 times & song 100 3 times
+    Suppose song 1 & song 100 have polar characteristics
+    In that case the average of song 1 & song 100 will cancel out, while in reality
+    song 1 outweights song 100 by ratio 10:1. This could happen to all the other songs
+    as well. Therefore a better approach would be to multiply the characteristics of
+    each song by the number of times they were played & then average all the songs.
+    For this, an additional data is needed, which is how many times each song was
+    played or even better, for what total duration each song was played.

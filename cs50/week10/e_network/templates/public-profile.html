@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Public Profile
+{% endblock %}
+
+{% block main %}
+    {% if not user %}
+        <h6>{{ user.username }} is not a valid username.</h6>
+    {% elif not posts %}
+        <h6>{{ user.username }} / {{ user.name }} has not uploaded anything yet.</h6>
+    {% else %}
+        <h6> {{ user.username }} / {{ user.name }}'s profile:</h6>
+    {% endif %}
+
+    {% for post in posts %}
+        <div>
+            <img src="{{ url_for('static', filename='posts/' + post.image_path) }}" class="img-fluid" style="max-width: 33%; max-height: 33%;" alt="{{ post.caption }}">
+            {% if post.caption %}
+                <h6 style="color: grey; margin-top: 4px; margin-bottom: 50px;">{{ post.caption }} ({{ post.timestamp }})</h6>
+            {% else %}
+            <h6 style="color: grey; margin-top: 4px; margin-bottom: 50px;">{{ post.timestamp }}</h6>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}
